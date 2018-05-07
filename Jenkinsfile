@@ -26,9 +26,10 @@ pipeline {
             }
           }
        }
-       stage('Deploy') {
+       stage('Deploy to staging') {
            steps{
           bat 'echo step3'
+          build job: 'Deploy-to-staging'
            }
        }
 
