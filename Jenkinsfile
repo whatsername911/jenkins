@@ -1,6 +1,4 @@
-tools{
-    maven 'localMaven'
-}
+
 pipeline {
    agent { label 'master'}
    stages{
