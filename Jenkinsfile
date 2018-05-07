@@ -13,7 +13,13 @@ pipeline {
        stage('Build') {
           // Run the maven build
           steps{
-          bat 'echo step2'
+          bat 'mvn clean package'
+          }
+          post{
+            success{
+                bat 'echo Now Archiving..,''
+                archiveArtifacts artifacts: '**/target/*.war'
+            }
           }
        }
        stage('Deploy') {
@@ -21,5 +27,6 @@ pipeline {
           bat 'echo step3'
            }
        }
+
    }
 }
