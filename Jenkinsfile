@@ -1,6 +1,9 @@
 
 pipeline {
    agent { label 'master'}
+   tools {
+    maven 'localMaven'
+    }
    stages{
        stage('Init') { // for display purposes
           // Get some code from a GitHub repository
